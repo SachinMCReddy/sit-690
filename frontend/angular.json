@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "projects": {
+    "nili-eat": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "less"
+        }
+      },
+      "root": "apps/nili-eat",
+      "sourceRoot": "apps/nili-eat/src",
+      "prefix": "frontend",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/nili-eat",
+            "index": "apps/nili-eat/src/index.html",
+            "main": "apps/nili-eat/src/main.ts",
+            "polyfills": "apps/nili-eat/src/polyfills.ts",
+            "tsConfig": "apps/nili-eat/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "apps/nili-eat/src/favicon.ico",
+              "apps/nili-eat/src/assets"
+            ],
+            "styles": ["apps/nili-eat/src/styles.less"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/nili-eat/src/environments/environment.ts",
+                  "with": "apps/nili-eat/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "nili-eat:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "nili-eat:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "nili-eat:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/nili-eat/tsconfig.app.json",
+              "apps/nili-eat/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/nili-eat/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/nili-eat/jest.config.js",
+            "tsConfig": "apps/nili-eat/tsconfig.spec.json",
+            "setupFile": "apps/nili-eat/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "nili-eat-e2e": {
+      "root": "apps/nili-eat-e2e",
+      "sourceRoot": "apps/nili-eat-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/nili-eat-e2e/cypress.json",
+            "tsConfig": "apps/nili-eat-e2e/tsconfig.e2e.json",
+            "devServerTarget": "nili-eat:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "nili-eat:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/nili-eat-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/nili-eat-e2e/**"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "nili-eat"
+}
