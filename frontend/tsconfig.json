@@ -15,7 +15,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@frontend/login-form": ["libs/login-form/src/index.ts"],
+      "@frontend/restaurant-registration-form": [
+        "libs/restaurant-registration-form/src/index.ts"
+      ],
+      "@frontend/registration-form": ["libs/registration-form/src/index.ts"],
+      "@frontend/home-page": ["libs/home-page/src/index.ts"],
+      "@frontend/nili-eat-common": ["libs/nili-eat-common/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

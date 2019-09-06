@@ -13,6 +13,21 @@
     },
     "nili-eat": {
       "tags": []
+    },
+    "login-form": {
+      "tags": []
+    },
+    "restaurant-registration-form": {
+      "tags": []
+    },
+    "registration-form": {
+      "tags": []
+    },
+    "home-page": {
+      "tags": []
+    },
+    "nili-eat-common": {
+      "tags": []
     }
   }
 }

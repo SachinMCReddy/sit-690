@@ -118,6 +118,164 @@
           }
         }
       }
+    },
+    "login-form": {
+      "projectType": "library",
+      "root": "libs/login-form",
+      "sourceRoot": "libs/login-form/src",
+      "prefix": "frontend",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/login-form/tsconfig.lib.json",
+              "libs/login-form/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/login-form/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/login-form/jest.config.js",
+            "tsConfig": "libs/login-form/tsconfig.spec.json",
+            "setupFile": "libs/login-form/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "less"
+        }
+      }
+    },
+    "restaurant-registration-form": {
+      "projectType": "library",
+      "root": "libs/restaurant-registration-form",
+      "sourceRoot": "libs/restaurant-registration-form/src",
+      "prefix": "frontend",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/restaurant-registration-form/tsconfig.lib.json",
+              "libs/restaurant-registration-form/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/restaurant-registration-form/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/restaurant-registration-form/jest.config.js",
+            "tsConfig": "libs/restaurant-registration-form/tsconfig.spec.json",
+            "setupFile": "libs/restaurant-registration-form/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "less"
+        }
+      }
+    },
+    "registration-form": {
+      "projectType": "library",
+      "root": "libs/registration-form",
+      "sourceRoot": "libs/registration-form/src",
+      "prefix": "frontend",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/registration-form/tsconfig.lib.json",
+              "libs/registration-form/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/registration-form/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/registration-form/jest.config.js",
+            "tsConfig": "libs/registration-form/tsconfig.spec.json",
+            "setupFile": "libs/registration-form/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "less"
+        }
+      }
+    },
+    "home-page": {
+      "projectType": "library",
+      "root": "libs/home-page",
+      "sourceRoot": "libs/home-page/src",
+      "prefix": "frontend",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/home-page/tsconfig.lib.json",
+              "libs/home-page/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/home-page/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/home-page/jest.config.js",
+            "tsConfig": "libs/home-page/tsconfig.spec.json",
+            "setupFile": "libs/home-page/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "less"
+        }
+      }
+    },
+    "nili-eat-common": {
+      "projectType": "library",
+      "root": "libs/nili-eat-common",
+      "sourceRoot": "libs/nili-eat-common/src",
+      "prefix": "frontend",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/nili-eat-common/tsconfig.lib.json",
+              "libs/nili-eat-common/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/nili-eat-common/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/nili-eat-common/jest.config.js",
+            "tsConfig": "libs/nili-eat-common/tsconfig.spec.json",
+            "setupFile": "libs/nili-eat-common/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "less"
+        }
+      }
     }
   },
   "cli": {
