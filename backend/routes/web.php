@@ -11,6 +11,8 @@
 |
 */
 
+Route::get('/', function () { return redirect('/app'); });
+
 // Route::middleware(['first', 'second'])->group(function () {
 Route::prefix('api/v1/')->group(function () {
     Route::get('handshake', function () { return [ "HELLO FROM BACKEND!!!" ]; });
